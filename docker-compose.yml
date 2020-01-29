@@ -1,0 +1,12 @@
+version: '3.7'
+services: 
+    express-app:
+        image: "diegocoutodev/express"
+        container_name: express-app
+        ports: 
+            - "3000:3000"
+        restart: always
+        user: "${USER_ID}:${GROUP_ID}"
+        volumes:
+            - $PWD/expressapp:/app # application directory
+            - $PWD/cache:/cache #  cache directory used during installation process
